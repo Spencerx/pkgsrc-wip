@@ -15,7 +15,7 @@ use "zero". This is fine for pkgsrc since we only ever build one variant.
 -JVM_VARIANT_MAIN := server
 +JVM_VARIANTS :=  @JVM_VARIANTS@
 +JVM_VARIANT_MAIN := @JVM_VARIANT_MAIN@
-+JVM_FEATURES_zero := g1gc serialgc zero
++JVM_FEATURES_zero := cds g1gc serialgc zero
  JVM_FEATURES_server := cds compiler1 compiler2 g1gc serialgc
  
  # Some users still set EXTRA_*FLAGS on the make command line. Must

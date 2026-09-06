@@ -105,9 +105,11 @@ CONFIGURE_ARGS+=	--with-stdc++lib=dynamic
 #
 # Build variant. Zero VM builds a portable JVM without assembly optimization.
 #
-PLIST_VARS+=		hotspot
+PLIST_SUBST+=		BUILD_VARIANT=${BUILD_VARIANT}
+PLIST_VARS+=		hotspot zero
 .if !empty(PKG_OPTIONS:Mjdk-zero-vm)
 BUILD_VARIANT=		zero
+PLIST.zero=		yes
 .include "../../devel/libffi/buildlink3.mk"
 .elif !empty(PKG_OPTIONS:Mjdk-hotspot-vm)
 BUILD_VARIANT=		server

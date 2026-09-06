@@ -18,7 +18,7 @@ Add runtime CPU detection support for NetBSD.
  
  void VM_Version::get_compatible_board(char *buf, int buflen) {
    assert(buf != nullptr, "invalid argument");
-@@ -545,6 +552,98 @@ void VM_Version::get_os_cpu_info() {
+@@ -545,6 +552,110 @@ void VM_Version::get_os_cpu_info() {
    }
  #endif // __FreeBSD__
  #endif // __FreeBSD__ || __OpenBSD__
@@ -66,19 +66,31 @@ Add runtime CPU detection support for NetBSD.
 +      num_sha2++;
 +    if (__SHIFTOUT(id.ac_aa64isar0, ID_AA64ISAR0_EL1_CRC32) >= ID_AA64ISAR0_EL1_CRC32_CRC32X)
 +      num_crc32++;
++#if defined(ID_AA64ISAR0_EL1_ATOMIC_SWP)
 +    if (__SHIFTOUT(id.ac_aa64isar0, ID_AA64ISAR0_EL1_ATOMIC) >= ID_AA64ISAR0_EL1_ATOMIC_SWP)
 +      num_lse++;
++#endif
++#if defined(ID_AA64ISAR1_EL1_DPB_CVAP)
 +    if (__SHIFTOUT(id.ac_aa64isar1, ID_AA64ISAR1_EL1_DPB) >= ID_AA64ISAR1_EL1_DPB_CVAP)
 +      num_dcpop++;
++#endif
++#if defined(ID_AA64ISAR0_EL1_SHA3_EOR3)
 +    if (__SHIFTOUT(id.ac_aa64isar0, ID_AA64ISAR0_EL1_SHA3) >= ID_AA64ISAR0_EL1_SHA3_EOR3)
 +      num_sha3++;
++#endif
++#if defined(ID_AA64ISAR0_EL1_SHA2_SHA512HSU)
 +    if (__SHIFTOUT(id.ac_aa64isar0, ID_AA64ISAR0_EL1_SHA2) >= ID_AA64ISAR0_EL1_SHA2_SHA512HSU)
 +      num_sha512++;
++#endif
++#if defined(ID_AA64PFR0_EL1_SVE_IMPL)
 +    if (__SHIFTOUT(id.ac_aa64pfr0,  ID_AA64PFR0_EL1_SVE) >= ID_AA64PFR0_EL1_SVE_IMPL)
 +      num_sve++;
++#endif
++#if defined(ID_AA64ISAR1_EL1_APA_QARMA) && defined(ID_AA64ISAR1_EL1_API_SUPPORTED)
 +    if (__SHIFTOUT(id.ac_aa64isar1, ID_AA64ISAR1_EL1_APA) >= ID_AA64ISAR1_EL1_APA_QARMA ||
 +        __SHIFTOUT(id.ac_aa64isar1, ID_AA64ISAR1_EL1_API) >= ID_AA64ISAR1_EL1_API_SUPPORTED)
 +     num_paca++;
++#endif
 +    // TODO: SVE2 and SVE_BITPERM live in id.ac_aa64zfr0 but shiftout macros are not yet added to armreg.h
 +  }
 +  _features = 0;

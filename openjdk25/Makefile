@@ -147,11 +147,6 @@ SUBST_SED.kqueue+=		-e 's/static final int EV_ONESHOT = 0x0010;/static final int
 SUBST_SED.kqueue+=		-e 's/static final int EV_CLEAR   = 0x0020;/static final int EV_CLEAR   = 0x0008;/'
 .endif
 
-PLIST_VARS+=			jvmci
-.if (${MACHINE_ARCH} == "x86_64" || ${MACHINE_ARCH} == "aarch64") && !empty(PKG_OPTIONS:Mjdk-hotspot-vm)
-PLIST.jvmci=			yes
-.endif
-
 .if ${OPSYS} == "NetBSD"
 TOOLS_PLATFORM.unzip=
 .endif
