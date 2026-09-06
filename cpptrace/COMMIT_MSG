@@ -1,0 +1,5 @@
+devel/cpptrace: Add cpptrace 1.0.4
+
+Cpptrace is a simple and portable C++ stacktrace library supporting C++11 and
+greater on Linux, macOS, and Windows including MinGW and Cygwin environments.
+The goal: Make stack traces simple for once.

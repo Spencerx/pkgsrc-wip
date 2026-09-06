@@ -1,0 +1,11 @@
+$NetBSD$
+
+BLAKE2s (cpptrace-1.0.4.tar.gz) = 9fffa3470c2d2187b48050e3f5a49a66317b88bb180567cb58c5a379492f9d25
+SHA512 (cpptrace-1.0.4.tar.gz) = e88edddbcdd423d49ed3adb02cf70580ee3a56065db4d81ca69d3f9f6d9b64ac27734842ca3b6d8ff45a548c25900a88f979e39d777af422a153e586d26ac5b5
+Size (cpptrace-1.0.4.tar.gz) = 494169 bytes
+SHA1 (patch-src_binary_elf.cpp) = 580c2512c8f9eb9596f86397e960c8f0f2928d7e
+SHA1 (patch-src_binary_elf.hpp) = dac62f83274772fa777f618c1830c950ac6826d4
+SHA1 (patch-src_binary_module__base.cpp) = 29248f715f2dfe802b839f76641044393958a389
+SHA1 (patch-src_binary_object.cpp) = d7f13573c057c3526af7858da7f6e749075e3c2f
+SHA1 (patch-src_platform_platform.hpp) = bf2aadf7aaeaa2cf01e145f7fe2ff48ec5798404
+SHA1 (patch-src_platform_program__name.hpp) = 535cd463a2b4817fdca7237cf3f3afec3d3aef2c
