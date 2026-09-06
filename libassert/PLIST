@@ -1,0 +1,17 @@
+@comment $NetBSD$
+include/libassert/assert-catch2-macros.hpp
+include/libassert/assert-catch2.hpp
+include/libassert/assert-gtest-macros.hpp
+include/libassert/assert-gtest.hpp
+include/libassert/assert-macros.hpp
+include/libassert/assert.hpp
+include/libassert/expression-decomposition.hpp
+include/libassert/platform.hpp
+include/libassert/stringification.hpp
+include/libassert/utilities.hpp
+include/libassert/version.hpp
+lib/cmake/libassert/libassert-config-version.cmake
+lib/cmake/libassert/libassert-config.cmake
+lib/cmake/libassert/libassert-targets-noconfig.cmake
+lib/cmake/libassert/libassert-targets.cmake
+lib/libassert.a

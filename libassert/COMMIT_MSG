@@ -1,0 +1,4 @@
+devel/libassert: Add libassert v2.2.1
+
+C++ assert library designed with the philosophy to provide as much helpful
+diagnostic info as possible.
