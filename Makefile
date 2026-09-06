@@ -3570,7 +3570,6 @@ SUBDIR+=	py-blake2
 SUBDIR+=	py-blaze
 SUBDIR+=	py-blessings
 SUBDIR+=	py-blist
-SUBDIR+=	py-blockbuster
 SUBDIR+=	py-blosc
 SUBDIR+=	py-blosc2
 SUBDIR+=	py-bloscpack
