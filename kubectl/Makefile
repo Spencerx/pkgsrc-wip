@@ -1,6 +1,6 @@
 # $NetBSD$
 
-DISTNAME=	kubectl-1.36.4
+DISTNAME=	kubectl-1.37.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GITHUB:=kubernetes/}
 GITHUB_PROJECT=	kubernetes
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/kubernetes/kubectl
 COMMENT=	Command line tool lets you control Kubernetes clusters
 LICENSE=	apache-2.0
 
-GO_BUILD_PATTERN+=	-ldflags ' \
+GOFLAGS+=		-ldflags ' \
 			-X k8s.io/client-go/pkg/version.buildDate="" \
 			-X k8s.io/client-go/pkg/version.gitTreeState=clean \
 			-X k8s.io/client-go/pkg/version.gitVersion=v${PKGVERSION_NOREV} \
@@ -20,7 +20,8 @@ GO_BUILD_PATTERN+=	-ldflags ' \
 			-X k8s.io/component-base/version.gitMinor=${PKGVERSION_NOREV:C/[0-9]+\.//:C/\..*//} \
 			-X k8s.io/component-base/version.gitTreeState=clean \
 			-X k8s.io/component-base/version.gitVersion=v${PKGVERSION_NOREV}'
-GO_BUILD_PATTERN+=	-mod=readonly ./cmd/kubectl
+GOFLAGS+=		-mod=readonly
+GO_BUILD_PATTERN+=	./cmd/kubectl
 
 .include "go-modules.mk"
 
