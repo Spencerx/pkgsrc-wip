@@ -1,9 +1,9 @@
 # $NetBSD$
 
-PKGNAME=	d2-0.7.1
+PKGNAME=	d2-0.8.2
 DISTNAME=	d2-${GITHUB_TAG}
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GITHUB:=terrastruct/}
+MASTER_SITES=	${MASTER_SITE_GITHUB:=d2lang/}
 GITHUB_PROJECT=	d2
 GITHUB_TAG=	v${PKGVERSION_NOREV}
 
@@ -16,7 +16,7 @@ EXTRACT_USING=	bsdtar
 
 .include "go-modules.mk"
 
-GO_BUILD_PATTERN+=	-ldflags "-X oss.terrastruct.com/d2/lib/version.Version=v${PKGVERSION}"
+GOFLAGS+=		-ldflags "-s -w -X github.com/d2lang/d2/lib/version.Version=v${PKGVERSION}"
 GO_BUILD_PATTERN+=	./
 
 INSTALLATION_DIRS+=	bin ${PKGMANDIR}/man1
