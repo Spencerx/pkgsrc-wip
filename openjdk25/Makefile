@@ -151,6 +151,11 @@ SUBST_SED.kqueue+=		-e 's/static final int EV_CLEAR   = 0x0020;/static final int
 TOOLS_PLATFORM.unzip=
 .endif
 
+PLIST_VARS+=		bsd-fontconfig
+.if ${OPSYS} == "NetBSD"
+PLIST.bsd-fontconfig=	yes
+.endif
+
 post-extract:
 # These libs are bundled w/ the netbsd-9 bootstrap to facilitate building with
 # MKLLVM=yes / MKGCC=no. Nuke them from bootstrap if they are present in base.

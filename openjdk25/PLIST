@@ -501,8 +501,8 @@ java/openjdk25/legal/jdk.zipfs/ASSEMBLY_EXCEPTION
 java/openjdk25/legal/jdk.zipfs/LICENSE
 java/openjdk25/lib/classlist
 java/openjdk25/lib/ct.sym
-java/openjdk25/lib/fontconfig.bfc
-java/openjdk25/lib/fontconfig.properties.src
+${PLIST.bsd-fontconfig}java/openjdk25/lib/fontconfig.bfc
+${PLIST.bsd-fontconfig}java/openjdk25/lib/fontconfig.properties.src
 java/openjdk25/lib/jfr/default.jfc
 java/openjdk25/lib/jfr/profile.jfc
 java/openjdk25/lib/jrt-fs.jar
